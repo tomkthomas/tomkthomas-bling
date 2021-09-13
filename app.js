@@ -48,6 +48,7 @@ let div = document.createElement('div')
 div.classList.add('buttons')
 root.appendChild(div)
 let buttons = []
+let flag = [false, false, false, false, false]
 let names=['Polaroid', "TV", "Traitor", "Fall Guy", "Radio"]
 for(let i=0; i < 5; i++){
     buttons[i] = document.createElement('button');
@@ -57,7 +58,7 @@ for(let i=0; i < 5; i++){
     buttons[i].style.padding = '0 10px'
     buttons[i].style.border = '2px solid black'
     buttons[i].style.borderRadius = '10px'
-    buttons[i].style.boxShadow = '3px 2px'
+    buttons[i].style.boxShadow = '3px 2px black'
     buttons[i].style.fontSize = '15px'
     div.appendChild(buttons[i])    
 }
@@ -165,11 +166,32 @@ function changeText() {
 
 for(let i = 0; i < 5; i++) {
     buttons[i].addEventListener('click', function() {
-        img.src = `assets/images/${buttons[i].innerText}.png`
-        img.style.width = '150px'
-        img.style.height = '150px'
-        img.style.paddingTop = '40px'
-        div1.style.display = 'block' 
-        
+        if(!flag[i]) {
+            img.src = `assets/images/${buttons[i].innerText}.png`
+            img.style.width = '150px'
+            img.style.height = '150px'
+            img.style.paddingTop = '40px'
+            div1.style.display = 'block' 
+            img.style.display = 'block'
+            flag.forEach(f => f = false)
+            buttons.forEach(button => {
+                button.style.background = 'inherit' 
+                button.style.color = 'inherit'
+            })
+            buttons[i].style.background = 'rgb(25,25,25)'
+            buttons[i].style.color = 'white'
+            flag[i] = true
+        }
+
+        else {
+            flag[i] = false
+            img.style.display = 'none'
+            buttons.forEach((button) => {
+                button.style.background = 'inherit'
+                button.style.color = 'inherit'
+            })
+            
+        }
+       
     })
 }
