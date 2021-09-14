@@ -5,9 +5,8 @@ Your code goes in this file
 */
 let root = document.querySelector("#root");
 root.style.background = 'gold'
-root.style.padding = '20px 10vw'
-root.style.width = '100vw'
-root.style.height = '100vh'
+root.style.padding = '40px 10vw 20px'
+root.style.width = '100%'
 root.style.fontFamily = 'Arial, Helvetica, sans-serif'
 
 let title = document.createElement('h1');
@@ -30,7 +29,7 @@ imgBlob.style.height = '250px'
 imgBlob.style.top = '0'
 imgBlob.style.right = '-10px'
 imgBlob.style.display = 'none'
-img.style.top = '170px'
+img.style.top = '180px'
 img.style.right = '175px'
 imgH1.innerText = "Stuff"
 imgH1.style.paddingRight = '40px'
@@ -51,7 +50,7 @@ line1.innerText = "Sizzle your Life"
 line2.innerText = "Make a Card"
 root.appendChild(line1)
 root.appendChild(line2)
-line1.style.padding = '10vh 0 20px'
+line1.style.padding = '15vh 0 20px'
 line1.style.fontSize = '30px'
 line1.style.fontWeight = '100'
 line2.style.fontSize = '50px'
@@ -147,7 +146,40 @@ cam.style.background = `url('assets/images/camera.png') no-repeat`
 cam.style.backgroundSize = '50%'
 cam.style.backgroundPosition = 'center'
 
+let div5 = document.createElement('div')
+root.appendChild(div5)
+div5.style.display = 'flex'
+div5.style.paddingTop = '40px'
+div5.style.flexWrap = 'wrap'
+div5.style.justifyContent = 'space-around'
+cam.onclick = () => {
+    let cardDiv = document.createElement('div')
+    cardDiv.classList.add('card')
+    cardDiv.innerHTML = div1.innerHTML
+    cardDiv.style.position = 'relative'
+    cardDiv.style.border = '2px solid black'
+    cardDiv.style.boxShadow = '3px 2px black'
+    let cardItems = cardDiv.childNodes
+    cardItems[0].style.textAlign = 'center'
+    cardItems[1].style.height = '250px'
+    cardItems[1].style.width = '250px'
+    cardItems[1].style.top = '-20px'
+    cardItems[1].style.left = '30px'
+    cardItems[2].style.height = '170px'
+    cardItems[2].style.width = '170px'
+    cardItems[2].style.position = 'absolute'
+    cardItems[2].style.top = '75px'
+    cardItems[2].style.left = '67px'
+    cardDiv.style.height = '330px'
+    cardDiv.style.width = '300px'
+    cardDiv.style.margin = '20px'
+    div5.appendChild(cardDiv)
+}
+
+
+
 let footer = document.createElement('footer')
+footer.style.paddingTop = '15px'
 let div4 = document.createElement('div')
 footer.appendChild(div4)
 root.appendChild(footer)
@@ -167,8 +199,10 @@ div4.style.justifyContent = 'space-between'
 
 bgSelect.onchange = changeBg
 function changeBg() {
+    let temp = root.style.background
     root.style.background = bgSelect.options[bgSelect.selectedIndex].value
-    console.log(bgSelect.options[bgSelect.selectedIndex]);
+    let cards = document.querySelectorAll('.card')
+    cards.forEach(card => card.style.background = temp)
 }
 
 input.onkeyup = changeText
@@ -222,4 +256,5 @@ function changeBlob() {
         imgH1.style.paddingRight = '40px'
     }
 }
+
 
