@@ -154,11 +154,23 @@ div5.style.flexWrap = 'wrap'
 div5.style.justifyContent = 'space-around'
 cam.onclick = () => {
     let cardDiv = document.createElement('div')
+    let deleteButton = document.createElement('button')
     cardDiv.classList.add('card')
     cardDiv.innerHTML = div1.innerHTML
     cardDiv.style.position = 'relative'
     cardDiv.style.border = '2px solid black'
     cardDiv.style.boxShadow = '3px 2px black'
+    cardDiv.appendChild(deleteButton);
+    deleteButton.style.background = `url('assets/images/icon_delete.png') no-repeat`
+    deleteButton.style.backgroundSize = '100%'
+    deleteButton.style.backgroundPosition = 'center'
+    deleteButton.style.border = 'none'
+    deleteButton.style.height = '40px'
+    deleteButton.style.width = '40px'
+    deleteButton.style.position = 'absolute'
+    deleteButton.style.top = '-15px'
+    deleteButton.style.left = '93%'
+    deleteButton.addEventListener('click', deleteClick)
     let cardItems = cardDiv.childNodes
     cardItems[0].style.textAlign = 'center'
     cardItems[1].style.height = '250px'
@@ -257,4 +269,6 @@ function changeBlob() {
     }
 }
 
-
+function deleteClick(event) {
+    event.target.parentElement.remove()
+}
