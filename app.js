@@ -31,9 +31,9 @@ imgBlob.style.top = '0'
 imgBlob.style.right = '-10px'
 imgBlob.style.display = 'none'
 img.style.top = '170px'
-img.style.right = '185px'
+img.style.right = '175px'
 imgH1.innerText = "Stuff"
-imgH1.style.paddingRight = '50px'
+imgH1.style.paddingRight = '40px'
 imgH1.style.fontWeight = 'bolder'
 imgH1.style.fontSize = '70px'
 div1.appendChild(imgH1)
@@ -219,6 +219,7 @@ function changeBlob() {
     }
     else{
         imgBlob.style.display = 'none'
-        imgH1.style.paddingRight = '50px'
+        imgH1.style.paddingRight = '40px'
     }
 }
+
