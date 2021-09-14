@@ -99,7 +99,7 @@ radioButton.appendChild(label1)
 radioButton.appendChild(nope)
 radioButton.appendChild(label2)
 root.appendChild(div2)
-input.placeholder = 'Name Your Bing!'
+input.placeholder = 'Name Your Bling!'
 let bgColors = ['Gold','Snow','DodgerBlue','LightSalmon','LightCoral','LightPink','OrangeRed','Tomato','DarkOrchid','SpringGreen','Thistle']
 for(let i=0; i < 11; i++) {
     let option = document.createElement('option')
@@ -232,8 +232,10 @@ for(let i = 0; i < 5; i++) {
             img.style.paddingTop = '40px'
             div1.style.display = 'block' 
             img.style.display = 'block'
-            flag.forEach(f => f = false)
+            let j = 0
             buttons.forEach(button => {
+                flag[j] = false
+                j++
                 button.style.background = 'inherit' 
                 button.style.color = 'inherit'
             })
