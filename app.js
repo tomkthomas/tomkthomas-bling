@@ -21,10 +21,23 @@ title.style.textShadow = '3px 2px 2px rgba(236, 147, 29, 0.671)'
 let div1 = document.createElement('div')
 let imgH1 = document.createElement('h1')
 let img = document.createElement('img')
+let imgBlob = document.createElement('img')
+imgBlob.style.position = 'relative'
+img.style.position = 'absolute'
+imgBlob.src = 'assets/images/blob.png'
+imgBlob.style.width = '250px'
+imgBlob.style.height = '250px'
+imgBlob.style.top = '0'
+imgBlob.style.right = '-10px'
+imgBlob.style.display = 'none'
+img.style.top = '170px'
+img.style.right = '185px'
 imgH1.innerText = "Stuff"
+imgH1.style.paddingRight = '50px'
 imgH1.style.fontWeight = 'bolder'
 imgH1.style.fontSize = '70px'
 div1.appendChild(imgH1)
+div1.appendChild(imgBlob)
 div1.appendChild(img)
 root.appendChild(div1)
 div1.style.float = 'right'
@@ -168,8 +181,8 @@ for(let i = 0; i < 5; i++) {
     buttons[i].addEventListener('click', function() {
         if(!flag[i]) {
             img.src = `assets/images/${buttons[i].innerText}.png`
-            img.style.width = '150px'
-            img.style.height = '150px'
+            img.style.width = '170px'
+            img.style.height = '170px'
             img.style.paddingTop = '40px'
             div1.style.display = 'block' 
             img.style.display = 'block'
@@ -194,4 +207,18 @@ for(let i = 0; i < 5; i++) {
         }
        
     })
+}
+
+radioButton.onclick = changeBlob
+function changeBlob() {
+    if(blob.checked) {
+        div1.style.display = 'block'
+        imgBlob.style.display = 'block'
+        imgH1.style.paddingRight = '0px'
+        imgH1.style.textAlign = 'center'
+    }
+    else{
+        imgBlob.style.display = 'none'
+        imgH1.style.paddingRight = '50px'
+    }
 }
