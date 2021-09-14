@@ -199,9 +199,20 @@ let footLabel = document.createElement('label')
 footLabel.innerText = '🖤  Credits:'
 div4.appendChild(footLabel)
 let links = []
+let srclink = ['https://www.figma.com/community/file/999755209064837558', 'https://www.figma.com/community/file/991742181111571735', 'https://www.figma.com/community/file/938411730253984196', 'https://www.figma.com/community/file/1017337333097796040', 'https://www.figma.com/community/file/883250469660505749']
 for(let i = 0; i < 5; i++) {
     links[i] = document.createElement('a')
     links[i].innerText = names[i]
+    links[i].href = srclink[i]
+    links[i].target = '_blank'
+    links[i].style.color = 'black'
+    links[i].style.textDecoration = 'none'
+    links[i].onmouseover = ()=> {
+        links[i].style.textDecoration = 'underline'
+        links[i].style.textDecorationThickness = '3px'
+        links[i].style.textUnderlineOffset = '5px'
+    }
+    links[i].onmouseout = () => {links[i].style.textDecoration = 'none'}
     div4.appendChild(links[i])
 }
 div4.style.margin = '100px 25vw'
