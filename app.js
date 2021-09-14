@@ -199,7 +199,7 @@ let footLabel = document.createElement('label')
 footLabel.innerText = '🖤  Credits:'
 div4.appendChild(footLabel)
 let links = []
-let srclink = ['https://www.figma.com/community/file/999755209064837558', 'https://www.figma.com/community/file/991742181111571735', 'https://www.figma.com/community/file/938411730253984196', 'https://www.figma.com/community/file/1017337333097796040', 'https://www.figma.com/community/file/883250469660505749']
+let srclink = ['https://www.figma.com/community/file/999755209064837558', 'https://www.figma.com/community/file/991742181111571735', 'https://www.figma.com/community/file/938411730253984196', 'https://www.figma.com/community/file/894115916957785363', 'https://www.figma.com/community/file/883250469660505749']
 for(let i = 0; i < 5; i++) {
     links[i] = document.createElement('a')
     links[i].innerText = names[i]
