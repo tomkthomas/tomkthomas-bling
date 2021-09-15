@@ -156,7 +156,6 @@ root.appendChild(div5)
 div5.style.display = 'flex'
 div5.style.paddingTop = '40px'
 div5.style.flexWrap = 'wrap'
-div5.style.width = '100%'
 div5.style.justifyContent = 'space-around'
 cam.onclick = () => {
     let cardDiv = document.createElement('div')
@@ -222,11 +221,10 @@ for(let i = 0; i < 5; i++) {
     links[i].onmouseout = () => {links[i].style.textDecoration = 'none'}
     div4.appendChild(links[i])
 }
-div4.style.margin = '0px 25vw 200px'
+div4.style.margin = '100px 25vw'
 div4.style.textAlign = 'center'
 div4.style.display = 'flex'
 div4.style.justifyContent = 'space-between'
-
 
 bgSelect.onchange = changeBg
 function changeBg() {
@@ -327,8 +325,6 @@ function iphoneFunction(y) {
         
         
     }
-   
-    
     else {
         div.style.width = '80%'
         for(let i = 0; i < 5; i++) {
@@ -347,14 +343,11 @@ function iphoneFunction(y) {
         imgBlob.style.top = '-5vh'
         img.style.top = '650px'
         img.style.right = '30px'
-        div5.style.position = 'static'
-        div5.style.top = '70px'
-        div5.style.width = '100%'
+        div5.style.top = '100px'
         div4.style.margin = '100px 20vw'
         div4.style.flexWrap = 'nowrap'
         links.forEach(link => link.style.padding = '0')
     }
-
 } 
 
 let x = window.matchMedia("(max-width: 800px)")
@@ -381,8 +374,6 @@ function ipadFunction(x){
         div5.style.width = '100%'
         div4.style.margin = '100px 20vw'
     }
-   
-    
     else {
         root.style.padding = '40px 10vw 20px'
         div.style.width = '45%'
@@ -396,11 +387,13 @@ function ipadFunction(x){
         imgH1.style.textAlign = 'center'
         imgBlob.style.top = '0'
         img.style.top = '130px'
-        img.style.marginRight = '0'
+        img.style.marginRight = 'auto'
         div5.style.position = 'static'
+        div5.style.paddingTop = '40px'
+        div5.style.width = '100%'
         div4.style.margin = '100px 25vw'
     }
-
+    
 }
 
 
