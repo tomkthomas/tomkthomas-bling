@@ -43,13 +43,14 @@ div1.style.float = 'right'
 div1.style.padding = '5vh 0 20px'
 div1.style.display = 'none'
 
-
+let div0 = document.createElement('div')
 let line1 = document.createElement('p')
 let line2 = document.createElement('h2')
 line1.innerText = "Sizzle your Life"
 line2.innerText = "Make a Card"
-root.appendChild(line1)
-root.appendChild(line2)
+div0.appendChild(line1)
+div0.appendChild(line2)
+root.appendChild(div0)
 line1.style.padding = '15vh 0 20px'
 line1.style.fontSize = '30px'
 line1.style.fontWeight = '100'
@@ -157,6 +158,7 @@ cam.onclick = () => {
     let deleteButton = document.createElement('button')
     cardDiv.classList.add('card')
     cardDiv.innerHTML = div1.innerHTML
+    cardDiv.style.background = bgSelect.options[bgSelect.selectedIndex].value
     cardDiv.style.position = 'relative'
     cardDiv.style.border = '2px solid black'
     cardDiv.style.boxShadow = '3px 2px black'
@@ -222,10 +224,7 @@ div4.style.justifyContent = 'space-between'
 
 bgSelect.onchange = changeBg
 function changeBg() {
-    let temp = root.style.background
     root.style.background = bgSelect.options[bgSelect.selectedIndex].value
-    let cards = document.querySelectorAll('.card')
-    cards.forEach(card => card.style.background = temp)
 }
 
 input.onkeyup = changeText
