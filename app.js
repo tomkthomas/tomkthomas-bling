@@ -24,6 +24,8 @@ let img = document.createElement('img')
 let imgBlob = document.createElement('img')
 div1.style.position = 'relative'
 div1.style.top = '-56vh'
+div1.style.width = '250px'
+div1.style.height = '360px'
 imgBlob.style.position = 'relative'
 img.style.position = 'absolute'
 imgBlob.src = 'assets/images/blob.png'
@@ -38,11 +40,12 @@ imgH1.innerText = "Stuff"
 imgH1.style.paddingRight = '40px'
 imgH1.style.fontWeight = 'bolder'
 imgH1.style.fontSize = '70px'
+imgH1.style.textAlign = 'center'
 div1.appendChild(imgH1)
 div1.appendChild(imgBlob)
 div1.appendChild(img)
 div1.style.float = 'right'
-div1.style.padding = '5vh 0 20px'
+div1.style.padding = '5vh 0 0'
 div1.style.display = 'none'
 
 let div0 = document.createElement('div')
@@ -155,9 +158,10 @@ root.appendChild(div1)
 let div5 = document.createElement('div')
 root.appendChild(div5)
 div5.style.display = 'flex'
-div5.style.paddingTop = '40px'
+//div5.style.paddingTop = '40px'
 div5.style.flexWrap = 'wrap'
 div5.style.justifyContent = 'space-around'
+div5.width = '100%'
 cam.onclick = () => {
     let cardDiv = document.createElement('div')
     let deleteButton = document.createElement('button')
@@ -290,8 +294,88 @@ function deleteClick(event) {
     event.target.parentElement.remove()
 }
 
+
+let x = window.matchMedia("(min-width: 401px) and (max-width: 800px)")
+
+x.addListener(ipadFunction)
+
+function ipadFunction(x){
+    if(x.matches){
+        root.style.padding = '30px 6vw 20px'
+        div.style.width = '80%'
+        div2.style.width = '700px'
+        input.style.width = '35%'
+        radioButton.style.width = '30%'
+        div1.style.position = 'static'
+        div1.style.float = 'none'
+        //div1.style.height = '200px'
+        div1.style.padding = '40px 30vw'
+        imgH1.style.textAlign = 'center'
+        imgBlob.style.top = '-5vh'
+        imgBlob.style.right = '20px'
+        img.style.top = '650px'
+        img.style.marginRight = '35vw'
+        div5.style.position = 'relative'
+        div5.style.top = '100px'
+        div5.style.width = '100%'
+        div4.style.margin = '100px 20vw'
+    }
+    
+    else {
+        root.style.padding = '40px 10vw 20px'
+        div.style.width = '45%'
+        div2.style.width = '51%'
+        input.style.width = 'auto'
+        radioButton.style.width = 'auto'
+        div1.style.position = 'relative'
+        //div1.style.height = '360px'
+        div1.style.float = 'right'
+        div1.style.padding = '5vh 0 0'
+        imgH1.style.textAlign = 'center'
+        imgBlob.style.top = '0'
+        imgBlob.style.right = '-10px'
+        img.style.top = '130px'
+        img.style.marginRight = 'auto'
+        div5.style.position = 'relative'
+        div5.style.top = '-300px'
+        div5.style.width = '100%'
+        div4.style.margin = '100px 25vw'
+
+        /*
+        //from other else
+        div.style.width = '80%'
+        for(let i = 0; i < 5; i++) {
+            buttons[i].style.margin = '0'
+        }
+        //div1.style.width = '250px'
+        //div1.style.height = '360px'
+        div1.style.padding = '5vh 0 0'
+        div.style.padding = '40px 0 0 0'
+        //imgH1.style.paddingLeft = '0'
+        imgH1.style.textAlign = 'center'
+        div2.style.flexDirection = 'row'
+        document.querySelectorAll('.input').forEach(element => element.style.margin = '0')
+        div2.style.width = '700px'
+        div2.style.flexWrap = 'nowrap'
+        input.style.width = '35%'
+        bgSelect.style.width = 'auto'
+        radioButton.style.width = '30%'
+        imgBlob.style.top = '0'
+        img.style.top = '650px'
+        img.style.right = '30px'
+        //div5.style.top = '100px'
+        div4.style.margin = '100px 20vw'
+        div4.style.flexWrap = 'nowrap'
+        links.forEach(link => link.style.padding = '0')
+        */
+    }
+    
+}
+
+
+
 let y = window.matchMedia("(max-width: 400px)")
-iphoneFunction(y) 
+
 y.addListener(iphoneFunction)
 
 function iphoneFunction(y) {
@@ -309,12 +393,14 @@ function iphoneFunction(y) {
         bgSelect.style.width = '40vw'
         radioButton.style.width = '60vw'
         div1.style.position = 'static'
-        div1.style.width = '100%'
-        imgH1.style.paddingLeft = '20vw'
+        div1.style.paddingRight = '40vw'
+        //div1.style.width = '100%'
+        //imgH1.style.paddingLeft = '0'
         imgBlob.style.top = '-30px'
         img.style.top = '980px'
-        img.style.right = '-10vw'
-        div1.style.height = '200px'
+        img.style.right = '30vw'
+        imgBlob.style.right = '10vw'
+        //div1.style.height = '200px'
         div5.style.position = 'relative'
         div5.style.top = '70px'
         div5.style.width = '100%'
@@ -324,6 +410,7 @@ function iphoneFunction(y) {
         links[3].style.paddingLeft = '70px'
         links[4].style.paddingRight = '80px'
         
+       
         
     }
     else {
@@ -331,8 +418,11 @@ function iphoneFunction(y) {
         for(let i = 0; i < 5; i++) {
             buttons[i].style.margin = '0'
         }
-        div1.style.width = 'auto'
-        imgH1.style.paddingLeft = '0'
+        //div1.style.width = '250px'
+        //div1.style.height = '360px'
+        div1.style.padding = '5vh 0 0'
+        div.style.padding = '40px 0 0 0'
+        //imgH1.style.paddingLeft = '0'
         imgH1.style.textAlign = 'center'
         div2.style.flexDirection = 'row'
         document.querySelectorAll('.input').forEach(element => element.style.margin = '0')
@@ -341,62 +431,35 @@ function iphoneFunction(y) {
         input.style.width = '35%'
         bgSelect.style.width = 'auto'
         radioButton.style.width = '30%'
-        imgBlob.style.top = '-5vh'
+        imgBlob.style.top = '0'
         img.style.top = '650px'
         img.style.right = '30px'
-        div5.style.top = '100px'
+        //div5.style.top = '100px'
         div4.style.margin = '100px 20vw'
         div4.style.flexWrap = 'nowrap'
         links.forEach(link => link.style.padding = '0')
-    }
-} 
-
-let x = window.matchMedia("(max-width: 800px)")
-ipadFunction(x) 
-x.addListener(ipadFunction)
-
-function ipadFunction(x){
-    if(x.matches){
-        root.style.padding = '30px 6vw 20px'
-        div.style.width = '80%'
-        div2.style.width = '700px'
-        input.style.width = '35%'
-        radioButton.style.width = '30%'
-        div1.style.position = 'static'
-        div1.style.height = '200px'
-        div1.style.paddingTop = '40px'
-        div1.style.paddingRight = '30vw'
-        imgH1.style.textAlign = 'center'
-        imgBlob.style.top = '-5vh'
-        img.style.top = '650px'
-        img.style.marginRight = '35vw'
-        div5.style.position = 'relative'
-        div5.style.top = '100px'
-        div5.style.width = '100%'
-        div4.style.margin = '100px 20vw'
-    }
-    else {
+        
+        //from other-else
         root.style.padding = '40px 10vw 20px'
         div.style.width = '45%'
         div2.style.width = '51%'
         input.style.width = 'auto'
         radioButton.style.width = 'auto'
         div1.style.position = 'relative'
-        div1.style.height = 'auto'
+        //div1.style.height = '360px'
         div1.style.float = 'right'
-        div1.style.padding = '5vh 0 20px'
+        div1.style.padding = '5vh 0 0'
         imgH1.style.textAlign = 'center'
         imgBlob.style.top = '0'
+        imgBlob.style.right = '-10px'
         img.style.top = '130px'
         img.style.marginRight = 'auto'
-        div5.style.position = 'static'
-        div5.style.paddingTop = '40px'
+        div5.style.position = 'relative'
+        div5.style.top = '-300px'
         div5.style.width = '100%'
         div4.style.margin = '100px 25vw'
+        ipadFunction(x)
     }
-    
-}
-
-
-
-
+} 
+ipadFunction(x)
+iphoneFunction(y) 
