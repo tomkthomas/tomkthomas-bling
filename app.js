@@ -157,6 +157,7 @@ div5.style.display = 'flex'
 div5.style.paddingTop = '40px'
 div5.style.flexWrap = 'wrap'
 div5.style.justifyContent = 'space-around'
+
 cam.onclick = () => {
     let cardDiv = document.createElement('div')
     let deleteButton = document.createElement('button')
@@ -317,7 +318,7 @@ function iphoneFunction(y) {
         div1.style.height = '200px'
         div5.style.position = 'relative'
         div5.style.top = '70px'
-        div5.style.width = '100%'
+       // div5.style.width = '100%'
         div4.style.margin = '100px 0'
         div4.style.flexWrap = 'wrap'
         links.forEach(link => link.style.padding = '0 10px')
@@ -344,7 +345,9 @@ function iphoneFunction(y) {
         imgBlob.style.top = '-5vh'
         img.style.top = '650px'
         img.style.right = '30px'
-        div5.style.top = '100px'
+        div5.style.position = 'relative'
+        div5.style.top = '70px'
+        //div5.style.width = '100%'
         div4.style.margin = '100px 20vw'
         div4.style.flexWrap = 'nowrap'
         links.forEach(link => link.style.padding = '0')
@@ -373,7 +376,7 @@ function ipadFunction(x){
         img.style.marginRight = '35vw'
         div5.style.position = 'relative'
         div5.style.top = '100px'
-        div5.style.width = '100%'
+        //div5.style.width = '100%'
         div4.style.margin = '100px 20vw'
     }
     else {
@@ -391,7 +394,6 @@ function ipadFunction(x){
         img.style.top = '130px'
         img.style.marginRight = '0'
         div5.style.position = 'static'
-        div5.style.width = '100%'
         div4.style.margin = '100px 25vw'
     }
     
