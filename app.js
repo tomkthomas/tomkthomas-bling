@@ -289,52 +289,6 @@ function deleteClick(event) {
     event.target.parentElement.remove()
 }
 
-let x = window.matchMedia("(max-width: 800px)")
-ipadFunction(x) 
-x.addListener(ipadFunction)
-
-function ipadFunction(x){
-    if(x.matches){
-        root.style.padding = '30px 6vw 20px'
-        div.style.width = '80%'
-        div2.style.width = '700px'
-        input.style.width = '35%'
-        radioButton.style.width = '30%'
-        div1.style.position = 'static'
-        div1.style.height = '200px'
-        div1.style.paddingTop = '40px'
-        div1.style.paddingRight = '30vw'
-        imgH1.style.textAlign = 'center'
-        imgBlob.style.top = '-5vh'
-        img.style.top = '650px'
-        img.style.marginRight = '35vw'
-        div5.style.position = 'relative'
-        div5.style.top = '100px'
-        div5.style.width = '100%'
-        div4.style.margin = '100px 20vw'
-    }
-    else {
-        root.style.padding = '40px 10vw 20px'
-        div.style.width = '45%'
-        div2.style.width = '51%'
-        input.style.width = 'auto'
-        radioButton.style.width = 'auto'
-        div1.style.position = 'relative'
-        div1.style.height = 'auto'
-        div1.style.float = 'right'
-        div1.style.padding = '5vh 0 20px'
-        imgH1.style.textAlign = 'center'
-        imgBlob.style.top = '0'
-        img.style.top = '130px'
-        img.style.marginRight = 'auto'
-        div5.style.position = 'static'
-        div5.style.paddingTop = '40px'
-        div5.style.width = '100%'
-        div4.style.margin = '100px 25vw'
-    }
-    
-}
-
 
 let y = window.matchMedia("(max-width: 400px)")
 iphoneFunction(y) 
@@ -396,4 +350,54 @@ function iphoneFunction(y) {
         links.forEach(link => link.style.padding = '0')
     }
 } 
+
+
+let x = window.matchMedia("(max-width: 800px)")
+ipadFunction(x) 
+x.addListener(ipadFunction)
+
+function ipadFunction(x){
+    if(x.matches){
+        root.style.padding = '30px 6vw 20px'
+        div.style.width = '80%'
+        div2.style.width = '700px'
+        input.style.width = '35%'
+        radioButton.style.width = '30%'
+        div1.style.position = 'static'
+        div1.style.height = '200px'
+        div1.style.paddingTop = '40px'
+        div1.style.paddingRight = '30vw'
+        imgH1.style.textAlign = 'center'
+        imgBlob.style.top = '-5vh'
+        img.style.top = '650px'
+        img.style.marginRight = '35vw'
+        div5.style.position = 'relative'
+        div5.style.top = '100px'
+        div5.style.width = '100%'
+        div4.style.margin = '100px 20vw'
+    }
+    else {
+        root.style.padding = '40px 10vw 20px'
+        div.style.width = '45%'
+        div2.style.width = '51%'
+        input.style.width = 'auto'
+        radioButton.style.width = 'auto'
+        div1.style.position = 'relative'
+        div1.style.height = 'auto'
+        div1.style.float = 'right'
+        div1.style.padding = '5vh 0 20px'
+        imgH1.style.textAlign = 'center'
+        imgBlob.style.top = '0'
+        img.style.top = '130px'
+        img.style.marginRight = '0'
+        div5.style.position = 'static'
+        div5.style.width = '100%'
+        div4.style.margin = '100px 25vw'
+    }
+    
+}
+
+
+
+
 
