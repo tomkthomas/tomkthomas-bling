@@ -306,7 +306,7 @@ function ipadFunction(x){
         div1.style.paddingRight = '30vw'
         imgH1.style.textAlign = 'center'
         imgBlob.style.top = '-5vh'
-        img.style.top = '630px'
+        img.style.top = '650px'
         img.style.marginRight = '35vw'
         div5.style.position = 'relative'
         div5.style.top = '100px'
@@ -342,7 +342,7 @@ y.addListener(iphoneFunction)
 
 function iphoneFunction(y) {
     if(y.matches) {
-        root.style.paddingTop = '30px'
+        root.style.padding = '30px 6vw 20px'
         div.style.width = '70%'
         for(let i = 0; i < 5; i++) {
             buttons[i].style.margin = '15px 10px'
@@ -355,25 +355,31 @@ function iphoneFunction(y) {
         bgSelect.style.width = '40vw'
         radioButton.style.width = '60vw'
         div1.style.position = 'static'
+        div1.style.width = '100%'
+        imgH1.style.paddingLeft = '20vw'
         imgBlob.style.top = '-30px'
-        img.style.top = '970px'
-        img.style.right = '10vw'
+        img.style.top = '980px'
+        img.style.right = '-10vw'
         div1.style.height = '200px'
         div5.style.position = 'relative'
         div5.style.top = '70px'
+        div5.style.width = '100%'
         div4.style.margin = '100px 0'
         div4.style.flexWrap = 'wrap'
         links.forEach(link => link.style.padding = '0 10px')
         links[3].style.paddingLeft = '70px'
         links[4].style.paddingRight = '80px'
         
+        
     }
     else {
-        root.style.padding = '30px 6vw 20px'
         div.style.width = '80%'
         for(let i = 0; i < 5; i++) {
             buttons[i].style.margin = '0'
         }
+        div1.style.width = 'auto'
+        imgH1.style.paddingLeft = '0'
+        imgH1.style.textAlign = 'center'
         div2.style.flexDirection = 'row'
         document.querySelectorAll('.input').forEach(element => element.style.margin = '0')
         div2.style.width = '700px'
@@ -382,7 +388,7 @@ function iphoneFunction(y) {
         bgSelect.style.width = 'auto'
         radioButton.style.width = '30%'
         imgBlob.style.top = '-5vh'
-        img.style.top = '630px'
+        img.style.top = '650px'
         img.style.right = '30px'
         div5.style.top = '100px'
         div4.style.margin = '100px 20vw'
