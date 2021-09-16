@@ -6,15 +6,15 @@ Your code goes in this file
 //no-change
 let root = document.querySelector("#root");
 root.style.background = 'gold'
-root.style.padding = '40px 10vw 20px'
+root.style.padding = '40px 8vw 20px'
 root.style.width = '100%'
-root.style.fontFamily = 'Arial, Helvetica, sans-serif'
+root.style.fontFamily = 'Montserrat'
 
 let title = document.createElement('h1');
 title.innerText = "BLING!";
 root.appendChild(title);
 title.style.textAlign = 'center'
-title.style.fontSize = '20px'
+title.style.fontSize = '25px'
 title.style.fontWeight = 'bolder'
 title.style.textShadow = '3px 2px 2px rgba(236, 147, 29, 0.671)'
 
@@ -23,7 +23,7 @@ let imgH1 = document.createElement('h1')
 let img = document.createElement('img')
 let imgBlob = document.createElement('img')
 div1.style.position = 'relative'
-div1.style.top = '-56vh'
+div1.style.top = '-58vh'
 div1.style.width = '250px'
 div1.style.height = '360px'
 imgBlob.style.position = 'relative'
@@ -81,8 +81,8 @@ for(let i=0; i < 5; i++){
     div.appendChild(buttons[i])    
 }
 div.style.display = 'flex'  
-div.style.width = '45%'
-div.style.paddingTop = '50px'
+div.style.width = '48%'
+div.style.padding = '40px 40px 0 0'
 div.style.justifyContent = 'space-between'
 div.style.flexWrap = 'wrap'
 
@@ -197,9 +197,10 @@ cam.onclick = () => {
     cardDiv.style.width = '300px'
     cardDiv.style.margin = '20px'
     div5.appendChild(cardDiv)
+    
 }
-
-
+cam.onmousedown = () => cam.style.backgroundColor = 'white'
+cam.onmouseup = () => cam.style.backgroundColor = 'inherit'
 
 let footer = document.createElement('footer')
 footer.style.paddingTop = '15px'
@@ -240,6 +241,10 @@ input.onkeyup = changeText
 function changeText() {
     div1.style.display = 'block'
     imgH1.innerText = input.value
+    
+    if(imgH1.innerText === '') imgBlob.style.top = '70px'
+    else imgBlob.style.top = '0'
+    
 }
 
 for(let i = 0; i < 5; i++) {
@@ -311,7 +316,7 @@ function ipadFunction(x){
         //div1.style.height = '200px'
         div1.style.padding = '40px 30vw'
         imgH1.style.textAlign = 'center'
-        imgBlob.style.top = '-5vh'
+        imgBlob.style.top = '-30px'
         imgBlob.style.right = '20px'
         img.style.top = '650px'
         img.style.marginRight = '35vw'
@@ -322,8 +327,8 @@ function ipadFunction(x){
     }
     
     else {
-        root.style.padding = '40px 10vw 20px'
-        div.style.width = '45%'
+        root.style.padding = '40px 8vw 20px'
+        div.style.width = '48%'
         div2.style.width = '51%'
         input.style.width = 'auto'
         radioButton.style.width = 'auto'
@@ -332,12 +337,13 @@ function ipadFunction(x){
         div1.style.float = 'right'
         div1.style.padding = '5vh 0 0'
         imgH1.style.textAlign = 'center'
-        imgBlob.style.top = '0'
+        if(imgH1.innerText === '') imgBlob.style.top = '70px'
+        else imgBlob.style.top = '0'
         imgBlob.style.right = '-10px'
         img.style.top = '130px'
         img.style.marginRight = 'auto'
         div5.style.position = 'relative'
-        div5.style.top = '-300px'
+        div5.style.top = '-350px'
         div5.style.width = '100%'
         div4.style.margin = '100px 25vw'
 
@@ -397,7 +403,7 @@ function iphoneFunction(y) {
         //div1.style.width = '100%'
         //imgH1.style.paddingLeft = '0'
         imgBlob.style.top = '-30px'
-        img.style.top = '980px'
+        img.style.top = '1050px'
         img.style.right = '30vw'
         imgBlob.style.right = '10vw'
         //div1.style.height = '200px'
@@ -414,14 +420,14 @@ function iphoneFunction(y) {
         
     }
     else {
-        div.style.width = '80%'
+        //div.style.width = '80%'
         for(let i = 0; i < 5; i++) {
             buttons[i].style.margin = '0'
         }
         //div1.style.width = '250px'
         //div1.style.height = '360px'
         div1.style.padding = '5vh 0 0'
-        div.style.padding = '40px 0 0 0'
+        //div.style.padding = '40px 40px 0 0'
         //imgH1.style.paddingLeft = '0'
         imgH1.style.textAlign = 'center'
         div2.style.flexDirection = 'row'
@@ -432,14 +438,14 @@ function iphoneFunction(y) {
         bgSelect.style.width = 'auto'
         radioButton.style.width = '30%'
         imgBlob.style.top = '0'
-        img.style.top = '650px'
+        //img.style.top = '650px'
         img.style.right = '30px'
         //div5.style.top = '100px'
         div4.style.margin = '100px 20vw'
         div4.style.flexWrap = 'nowrap'
         links.forEach(link => link.style.padding = '0')
         
-        //from other-else
+        /*//from other-else
         root.style.padding = '40px 10vw 20px'
         div.style.width = '45%'
         div2.style.width = '51%'
@@ -450,7 +456,8 @@ function iphoneFunction(y) {
         div1.style.float = 'right'
         div1.style.padding = '5vh 0 0'
         imgH1.style.textAlign = 'center'
-        imgBlob.style.top = '0'
+        if(imgH1.innerText === '') imgBlob.style.top = '70px'
+        else imgBlob.style.top = '0'
         imgBlob.style.right = '-10px'
         img.style.top = '130px'
         img.style.marginRight = 'auto'
@@ -458,6 +465,7 @@ function iphoneFunction(y) {
         div5.style.top = '-300px'
         div5.style.width = '100%'
         div4.style.margin = '100px 25vw'
+        */
         ipadFunction(x)
     }
 } 
