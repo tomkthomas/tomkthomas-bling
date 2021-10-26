@@ -5,7 +5,7 @@ Your code goes in this file
 */
 //no-change
 let root = document.querySelector("#root");
-root.style.background = 'gold'
+root.style.background = 'snow'
 root.style.padding = '40px 8vw 20px'
 root.style.width = '100%'
 root.style.fontFamily = 'Montserrat'
@@ -106,7 +106,7 @@ radioButton.appendChild(nope)
 radioButton.appendChild(label2)
 root.appendChild(div2)
 input.placeholder = 'Name Your Bling!'
-let bgColors = ['Gold','Snow','DodgerBlue','LightSalmon','LightCoral','LightPink','OrangeRed','Tomato','DarkOrchid','SpringGreen','Thistle']
+let bgColors = ['Snow','Gold','DodgerBlue','LightSalmon','LightCoral','LightPink','OrangeRed','Tomato','DarkOrchid','SpringGreen','Thistle']
 for(let i=0; i < 11; i++) {
     let option = document.createElement('option')
     option.value = bgColors[i]
