@@ -11,7 +11,7 @@ root.style.width = '100%'
 root.style.fontFamily = 'Montserrat'
 
 let title = document.createElement('h1');
-title.innerText = "BLING!";
+title.innerText = "Make Your Own Card!";
 root.appendChild(title);
 title.style.textAlign = 'center'
 title.style.fontSize = '25px'
